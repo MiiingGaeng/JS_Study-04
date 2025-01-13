@@ -12,7 +12,18 @@
  * @param {string} title
  * @returns {Array} 새로운 todos 배열
  */
-function createTodo(todos, title) {}
+function createTodo(todos, title) {
+  console.log(todos);
+
+  const newTodo = {};
+  newTodo['id'] = Date.now();
+  newTodo['title'] = title;
+  newTodo['completed'] = false;
+
+  const newTodos = [...todos, newTodo];
+
+  return newTodos;
+}
 
 // export 수정 불가
 export { createTodo };

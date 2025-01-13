@@ -10,7 +10,18 @@
  * @param {number} id
  * @returns {Array} 새로운 todos 배열
  */
-function deleteTodo(todos, id) {}
+function deleteTodo(todos, id) {
+  const newTodos = todos.filter((newTodo) => newTodo['id'] !== id);
+
+  return newTodos;
+}
+
+const todos = [
+  { id: 1, title: '첫 번째 할 일', completed: false },
+  { id: 2, title: '두 번째 할 일', completed: true },
+];
+
+deleteTodo(todos, 1);
 
 // export 수정 불가
 export { deleteTodo };
