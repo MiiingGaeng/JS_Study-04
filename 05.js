@@ -14,28 +14,14 @@
  */
 
 function filterUserTodos(userTodos, userId, priority) {
-  const answer = [];
   const filteredTodos = userTodos.filter(
-    (todo) => todo['userId'] === userId && todo['priority'] === priority
+    (todo) =>
+      todo['userId'] === userId &&
+      todo['priority'] === priority &&
+      !todo.completed
   );
-  filteredTodos.map((todo) => answer.push(todo.title));
-
-  return answer;
+  return filteredTodos.map((todo) => todo.title);
 }
-
-const userTodos = [
-  {
-    userId: 1,
-    title: '자바스크립트 공부',
-    completed: false,
-    priority: 'high',
-  },
-  { userId: 2, title: '마트 가기', completed: true, priority: 'low' },
-  { userId: 1, title: '운동하기', completed: false, priority: 'low' },
-  { userId: 1, title: '청소하기', completed: false, priority: 'high' },
-];
-
-filterUserTodos(userTodos, 1, 'low');
 
 // export 수정 불가
 export { filterUserTodos };
